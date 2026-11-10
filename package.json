@@ -1,0 +1,27 @@
+{
+  "name": "marble-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9002",
+    "dev:stable": "next dev -p 9002",
+    "build": "next build",
+    "start": "next start -p 9002",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.8.0"
+  }
+}

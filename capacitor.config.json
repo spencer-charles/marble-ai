@@ -1,0 +1,8 @@
+{
+  "appId": "com.marbleai.fieldops",
+  "appName": "Marble AI",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https"
+  }
+}
