@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Marble AI — Stone Restoration & Field Troubleshooter',
+  title: 'Marble AI — Stone Restoration Operations & Knowledge Base',
   description:
-    'Interactive stone restoration workflow & AI troubleshooter connecting Sales/Estimators, Field Craftsmen, and Project Managers on a shared live customer job record.',
+    'Stone restoration workflow, diagnostic assistant, estimator, and franchise knowledge base connecting Sales, Field Craftsmen, Project Managers, and Owner/GMs.',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  viewportFit: 'cover',
   themeColor: '#0c0a09'
 };
 
@@ -29,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased bg-stone-950 text-stone-100">{children}</body>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <body className="antialiased bg-stone-950 text-stone-100 text-sm transition-colors duration-150">
+        {children}
+      </body>
     </html>
   );
 }

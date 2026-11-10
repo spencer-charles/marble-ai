@@ -1,29 +1,122 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   THEME DEFINITIONS: Warm Parchment Light Theme & Stone Dark Theme
+   Light Theme:
+     Background (Warm Off-White / Parchment): #FAF9F5 & #F4F3EE
+     Foreground / Typography (Dark Brown-Gray): #141413 & #1F1E1D
+   ========================================================================== */
+
+html[data-theme="light"],
+html:not([data-theme="dark"]) {
+  color-scheme: light;
+
+  /* Warm Off-White / Parchment Surfaces */
+  --color-stone-950: #FAF9F5;
+  --color-stone-900: #F4F3EE;
+  --color-stone-800: #E6E3DA;
+  --color-stone-700: #D2CEC2;
+  --color-stone-600: #8C877E;
+
+  /* Dark Brown-Gray Typography Scale */
+  --color-stone-500: #6B665F;
+  --color-stone-400: #524E49;
+  --color-stone-300: #363431;
+  --color-stone-200: #1F1E1D;
+  --color-stone-100: #141413;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 @layer base {
   html,
   body {
-    background-color: #0c0a09;
-    color: #f5f5f4;
+    background-color: var(--color-stone-950);
+    color: var(--color-stone-100);
     -webkit-tap-highlight-color: transparent;
   }
 }
 
-/* Custom sleek scrollbar for mobile frame & timeline */
+/* Preserve dark brown-gray text on solid accent buttons (amber/sky/emerald/purple) in Light Theme */
+html[data-theme="light"] .text-stone-950 {
+  color: #141413 !important;
+}
+
+html[data-theme="light"] .text-stone-900 {
+  color: #1F1E1D !important;
+}
+
+html[data-theme="light"] .text-white,
+html[data-theme="light"] .hover\:text-white:hover {
+  color: #141413 !important;
+}
+
+/* Ensure high-contrast accent typography on Warm Off-White (#FAF9F5 / #F4F3EE) in Light Theme */
+html[data-theme="light"] .text-amber-100,
+html[data-theme="light"] .text-amber-200,
+html[data-theme="light"] .text-amber-300 {
+  color: #78350f !important;
+}
+
+html[data-theme="light"] .text-amber-400 {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .text-sky-200,
+html[data-theme="light"] .text-sky-300 {
+  color: #075985 !important;
+}
+
+html[data-theme="light"] .text-sky-400 {
+  color: #0369a1 !important;
+}
+
+html[data-theme="light"] .text-emerald-200,
+html[data-theme="light"] .text-emerald-300 {
+  color: #065f46 !important;
+}
+
+html[data-theme="light"] .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html[data-theme="light"] .text-purple-100,
+html[data-theme="light"] .text-purple-200,
+html[data-theme="light"] .text-purple-300 {
+  color: #5b21b6 !important;
+}
+
+html[data-theme="light"] .text-purple-400 {
+  color: #6d28d9 !important;
+}
+
+html[data-theme="light"] .text-red-100,
+html[data-theme="light"] .text-red-200,
+html[data-theme="light"] .text-red-300 {
+  color: #991b1b !important;
+}
+
+html[data-theme="light"] .text-red-400 {
+  color: #b91c1c !important;
+}
+
+/* Custom sleek scrollbar for both themes */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0c0a09;
+  background: var(--color-stone-950);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #292524;
+  background: var(--color-stone-700);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #44403c;
+  background: var(--color-stone-600);
 }

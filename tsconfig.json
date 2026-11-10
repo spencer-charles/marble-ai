@@ -29,7 +29,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "stoneops_ai_mobile_prototype.tsx"
+    "node_modules"
   ]
 }
